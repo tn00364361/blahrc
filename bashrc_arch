@@ -24,5 +24,5 @@ PS1='\[\033[00;30;102m\](´• ω •\`)ﾉ@\h\[\033[00m\] \[\033[00;94m\]\W\[\0
 ##  Some handy aliases
 alias ls='ls --color=auto'
 alias ll='ls -halF'
-alias gpu-monitor='watch -t -n 0.2 nvidia-smi'
+alias gm='watch -t -n 0.2 nvidia-smi'
 alias htop='htop -d 2'
