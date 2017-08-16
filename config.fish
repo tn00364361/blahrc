@@ -1,4 +1,6 @@
-# Run `ln -s $PWD/config.fish ~/.config/fish/config.fish` to symlink the config file 
+# Run `ln -s $PWD/config.fish ~/.config/fish/config.fish` to symlink the config file
+
+set fish_greeting ""
 
 ##  Some handy aliases
 alias ls='ls --color=auto'
