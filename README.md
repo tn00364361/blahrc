@@ -1,16 +1,12 @@
 # blahrc
-Some customized rc-files for Linux. To use the files, first backup the original one:
+Some customized rc and config files for Linux. To use the files, first backup the original one. For example,
 
 ```
-$ mv .bashrc .bashrc.bak
+$ mv .bashrc bashrc.bak
 ```
 
-Then symlink the rc-file:
+then symlink the rc file:
 
 ```
-$ ln -s ~/.bashrc bashrc_os
+$ ln -s $PWD/bashrc.arch ~/.bashrc
 ```
-
-## Lists
-- `bashrc_arch`: For Arch Linux
-- `bashrc_ubuntu`: For Ubuntu (based on 16.04)
