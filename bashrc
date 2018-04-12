@@ -109,9 +109,9 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 ## For CUDA and CUDNN
-#export CUDA_DIR=/usr/local/cuda
-#export PATH=$CUDA_DIR/bin:$PATH
-#export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
+export CUDA_DIR=/usr/local/cuda
+export PATH=$CUDA_DIR/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
 
 alias gm='watch -t -n 0.2 nvidia-smi'
 alias htop='htop -d 2'
