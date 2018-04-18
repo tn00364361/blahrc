@@ -109,4 +109,6 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 ##  For ROS
-#source /opt/ros/kinetic/setup.bash
+# source /opt/ros/kinetic/setup.zsh
+
+export PATH=/home/$USER/.local/bin:$PATH
