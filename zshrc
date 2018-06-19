@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="risto"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -110,3 +110,8 @@ export PATH=/home/$USER/.local/bin:$PATH
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
+
+source /opt/ros/melodic/setup.zsh
+
+export CONTAINER_FN_PATH=/home/myyu/git/container-fns
+export PYTHONPATH=/home/myyu/git/cartopy/build:$PYTHONPATH

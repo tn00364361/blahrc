@@ -116,3 +116,5 @@ export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
 alias gm='watch -t -n 0.2 nvidia-smi'
 alias htop='htop -d 2'
 alias rossetup='source /opt/ros/melodic/setup.bash'
+
+source /opt/ros/melodic/setup.bash
