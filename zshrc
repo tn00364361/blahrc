@@ -102,7 +102,7 @@ alias rossetup='source /opt/ros/melodic/setup.zsh'
 ## For CUDA and CUDNN
 export CUDA_DIR=/usr/local/cuda
 export PATH=$CUDA_DIR/bin:$PATH
-export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH:/usr/local
 
 export PATH=/home/$USER/.local/bin:$PATH
 
