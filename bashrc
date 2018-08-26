@@ -102,19 +102,20 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
-
-##  For Tilix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
-fi
+alias gm="watch -t -n 0.5 nvidia-smi"
+alias ct="watch -t -n 0.5 'hostname && sensors | grep id | grep -iv fan'"
+alias htop="htop -d 5"
+alias pylab="ipython3 --pylab"
+alias rs="source /opt/ros/melodic/setup.zsh"
 
 ## For CUDA and CUDNN
 export CUDA_DIR=/usr/local/cuda
 export PATH=$CUDA_DIR/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
 
-alias gm='watch -t -n 0.2 nvidia-smi'
-alias htop='htop -d 2'
-alias rossetup='source /opt/ros/melodic/setup.bash'
+export PATH=/home/$USER/.local/bin:$PATH
 
-# source /opt/ros/melodic/setup.bash
+##  For Tilix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi

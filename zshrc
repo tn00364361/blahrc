@@ -98,11 +98,11 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias gm='watch -t -n 0.5 nvidia-smi'
-alias htop='htop -d 5'
-alias ct="watch -t -n 0.5 'sensors | grep id'"
-alias pylab='ipython3 --pylab'
-alias rossetup='source /opt/ros/melodic/setup.zsh'
+alias gm="watch -t -n 0.5 nvidia-smi"
+alias ct="watch -t -n 0.5 'hostname && sensors | grep id | grep -iv fan'"
+alias htop="htop -d 5"
+alias pylab="ipython3 --pylab"
+alias rs="source /opt/ros/melodic/setup.zsh"
 
 ## For CUDA and CUDNN
 export CUDA_DIR=/usr/local/cuda
@@ -115,8 +115,3 @@ export PATH=/home/$USER/.local/bin:$PATH
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
-
-# source /opt/ros/melodic/setup.zsh
-
-# export CONTAINER_FN_PATH=/home/myyu/git/container-fns
-# export PYTHONPATH=/home/myyu/git/cartopy/build:$PYTHONPATH
