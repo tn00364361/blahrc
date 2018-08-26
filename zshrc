@@ -98,8 +98,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias gm='watch -t -n 0.2 nvidia-smi'
-alias htop='htop -d 2'
+alias gm='watch -t -n 0.5 nvidia-smi'
+alias htop='htop -d 5'
+alias ct="watch -t -n 0.5 'sensors | grep id'"
 alias rossetup='source /opt/ros/melodic/setup.zsh'
 
 ## For CUDA and CUDNN
