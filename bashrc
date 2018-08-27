@@ -102,8 +102,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
-alias gm="watch -t -n 0.5 nvidia-smi"
-alias ct="watch -t -n 0.5 'hostname && sensors | grep id | grep -iv fan'"
+alias gm="watch -t -n 0.5 'hostname && nvidia-smi'"
+alias ct="watch -t -n 0.5 'hostname && date && sensors | grep id | grep -iv fan'"
 alias htop="htop -d 5"
 alias pylab="ipython3 --pylab"
 alias rs="source /opt/ros/melodic/setup.zsh"
