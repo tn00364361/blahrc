@@ -99,7 +99,11 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias gm="watch -t -n 0.5 'hostname && nvidia-smi'"
+<<<<<<< HEAD
 alias ct="watch -t -n 0.5 'hostname && date && sensors | grep id | grep -iv fan'"
+=======
+alias ct="watch -t -n 0.5 'hostname && sensors | grep id | grep -iv fan'"
+>>>>>>> d6a55cc6f2e0e56aa505df84474da9bcf0845e96
 alias htop="htop -d 5"
 alias pylab="ipython3 --pylab"
 alias rs="source /opt/ros/melodic/setup.zsh"
