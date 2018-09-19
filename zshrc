@@ -105,6 +105,9 @@ alias ct="watch -t -n 0.5 'hostname && date && sensors | grep id | grep -iv fan'
 alias htop="htop -d 5"
 alias pylab="ipython3 --pylab"
 alias rs="source /opt/ros/melodic/setup.zsh"
+alias umvpn-connect="/opt/cisco/anyconnect/bin/vpn -s connect umvpn.umnet.umich.edu"
+alias umvpn-disconnect="/opt/cisco/anyconnect/bin/vpn -s disconnect"
+alias umvpn-state="/opt/cisco/anyconnect/bin/vpn -s state"
 
 ## For CUDA and CUDNN
 export CUDA_DIR=/usr/local/cuda
