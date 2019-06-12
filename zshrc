@@ -65,6 +65,7 @@ plugins=(
   git
   pip
   zsh-autosuggestions
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -121,3 +122,5 @@ export PATH=/home/$USER/.local/bin:$PATH
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
+
+autoload -U compinit && compinit
