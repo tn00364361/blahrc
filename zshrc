@@ -102,7 +102,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias gm="watch -t -n 0.5 'hostname && nvidia-smi'"
-alias ct="watch -t -n 0.5 'hostname && date && sensors | grep id | grep -iv fan'"
+alias ct="watch -t -n 0.5 'hostname && date && sensors | grep -iv core'"
 alias fs="df -hT | grep -Ev 'nullfs|squashfs|tmpfs|udev|devfs|procfs|fdescfs'"
 alias htop="htop -d 5"
 alias pylab="ipython3 --pylab"
