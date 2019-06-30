@@ -103,7 +103,7 @@ fi
 
 alias gm="watch -t -n 0.5 'hostname && nvidia-smi'"
 alias ct="watch -n 0.5 'sensors | grep -iv core'"
-alias fs="df -hT | grep -Ev 'nullfs|squashfs|tmpfs|udev|devfs|procfs|fdescfs'"
+alias fs="df -hT --exclude-type={nullfs,squashfs,tmpfs,devtmpfs,udev,devfs,procfs,fdescfs}"
 alias htop="htop -d 5"
 alias pylab="ipython3 --pylab"
 alias rs="source /opt/ros/melodic/setup.zsh"
@@ -114,9 +114,9 @@ alias umvpn-state="/opt/cisco/anyconnect/bin/vpn -s state"
 ## For CUDA and CUDNN
 export CUDA_DIR=/usr/local/cuda-10.0
 export PATH=$CUDA_DIR/bin:$PATH
-export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH:/usr/local
+export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
 
-export PATH=/home/$USER/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 ##  For Tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
