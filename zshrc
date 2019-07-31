@@ -123,7 +123,7 @@ export CARLA_ROOT=/opt/carla
 export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/agents:$CARLA_ROOT/PythonAPI/carla
 
 ##  ROS
-source /opt/ros/melodic/setup.bash
+source /opt/ros/melodic/setup.bash > /dev/null 2>&1
 
 ##  For Tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
