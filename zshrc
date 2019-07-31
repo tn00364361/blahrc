@@ -118,6 +118,13 @@ export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
 
 export PATH=$HOME/.local/bin:$PATH
 
+##  CARLA Simulator
+export CARLA_ROOT=/opt/carla
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/agents:$CARLA_ROOT/PythonAPI/carla
+
+##  ROS
+source /opt/ros/melodic/setup.bash
+
 ##  For Tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
