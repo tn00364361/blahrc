@@ -113,7 +113,7 @@ alias umvpn-disconnect="/opt/cisco/anyconnect/bin/vpn -s disconnect"
 alias umvpn-state="/opt/cisco/anyconnect/bin/vpn -s state"
 
 ## For CUDA and CUDNN
-export CUDA_DIR=/usr/local/cuda-10.0
+export CUDA_DIR=/usr/local/cuda-10.1
 export PATH=$CUDA_DIR/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
 
