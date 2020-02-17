@@ -113,15 +113,11 @@ alias umvpn-disconnect="/opt/cisco/anyconnect/bin/vpn -s disconnect"
 alias umvpn-state="/opt/cisco/anyconnect/bin/vpn -s state"
 
 ## For CUDA and CUDNN
-export CUDA_DIR=/usr/local/cuda-10.0
+export CUDA_DIR=/usr/local/cuda-10.1
 export PATH=$CUDA_DIR/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
 
 export PATH=$HOME/.local/bin:$PATH
-
-##  CARLA Simulator
-export CARLA_ROOT=/opt/carla
-export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/agents:$CARLA_ROOT/PythonAPI/carla
 
 ##  ROS
 source /opt/ros/melodic/setup.bash > /dev/null 2>&1
