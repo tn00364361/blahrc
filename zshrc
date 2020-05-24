@@ -119,12 +119,11 @@ export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
 
 export PATH=$HOME/.local/bin:$PATH
 
-##  ROS
-source /opt/ros/melodic/setup.zsh > /dev/null 2>&1
+#  ROS
+[ -f "/opt/ros/melodic/setup.zsh" ] && source /opt/ros/melodic/setup.zsh
+[ -f "/opt/ros/noetic/setup.zsh" ] && source /opt/ros/noetic/setup.zsh
 
 ##  For Tilix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
-fi
+[ $TILIX_ID ] || [ $VTE_VERSION ] && source /etc/profile.d/vte-2.91.sh
 
 autoload -U compinit && compinit
