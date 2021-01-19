@@ -110,7 +110,7 @@ alias pylab="ipython3 --pylab"
 alias umvpn-connect="/opt/cisco/anyconnect/bin/vpn -s connect umvpn.umnet.umich.edu"
 alias umvpn-disconnect="/opt/cisco/anyconnect/bin/vpn -s disconnect"
 alias umvpn-state="/opt/cisco/anyconnect/bin/vpn -s state"
-alias vnclaunch="vncserver :$(expr $(id -u) % 1024) -geometry 1920x1080 -localhost no"
+alias vnclaunch="vncserver :$(expr $(id -u) % 1024) -geometry 1920x1080"
 alias vnckill="vncserver -kill :$(expr $(id -u) % 1024)"
 
 # CUDA and CUDNN
@@ -119,6 +119,7 @@ export PATH=$CUDA_DIR/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
 
 export PATH=$HOME/.local/bin:$PATH
+export PATH=/opt/TurboVNC/bin:/opt/VirtualGL/bin:$PATH
 
 # ROS
 [ -f "/opt/ros/melodic/setup.zsh" ] && source /opt/ros/melodic/setup.zsh
