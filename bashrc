@@ -107,22 +107,19 @@ alias ct="watch -n 0.5 'sensors | grep -iv core'"
 alias fs="df -hT --exclude-type={nullfs,squashfs,tmpfs,devtmpfs,udev,devfs,procfs,fdescfs}"
 alias htop="htop -d 5"
 alias pylab="ipython3 --pylab"
-alias umvpn-connect="/opt/cisco/anyconnect/bin/vpn -s connect umvpn.umnet.umich.edu"
-alias umvpn-disconnect="/opt/cisco/anyconnect/bin/vpn -s disconnect"
-alias umvpn-state="/opt/cisco/anyconnect/bin/vpn -s state"
 alias vnclaunch="vncserver :$(expr $(id -u) % 1024) -geometry 1920x1080 -localhost no"
 alias vnckill="vncserver -kill :$(expr $(id -u) % 1024)"
 
-# CUDA and CUDNN
-export CUDA_DIR=/usr/local/cuda-10.1
-export PATH=$CUDA_DIR/bin:$PATH
-export LD_LIBRARY_PATH=$CUDA_DIR/include:$CUDA_DIR/lib64:$LD_LIBRARY_PATH
-
 export PATH=$HOME/.local/bin:$PATH
 
-# ROS
-[ -f "/opt/ros/melodic/setup.bash" ] && source /opt/ros/melodic/setup.bash
-[ -f "/opt/ros/noetic/setup.bash" ] && source /opt/ros/noetic/setup.bash
+export DISTRO=$(lsb_release -sc)
+if [ $DISTRO = "focal" ]; then
+  [ -f "/opt/ros/noetic/setup.zsh" ] && source /opt/ros/noetic/setup.zsh
+  export PYTHONPATH=$HOME/.local/lib/python3.8/site-packages:$PYTHONPATH
+elif [ $DISTRO = "bionic" ]; then
+  [ -f "/opt/ros/melodic/setup.zsh" ] && source /opt/ros/melodic/setup.zsh
+  export PYTHONPATH=$HOME/.local/lib/python3.6/site-packages:$PYTHONPATH
+fi
 
-# For Tilix
+# Tilix
 [ $TILIX_ID ] || [ $VTE_VERSION ] && source /etc/profile.d/vte-2.91.sh
