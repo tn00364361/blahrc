@@ -104,7 +104,7 @@ fi
 
 alias gm="watch -t -n 0.5 'hostname && nvidia-smi'"
 alias ct="watch -n 0.5 'sensors | grep -iv core'"
-alias fs="df -hT --exclude-type={nullfs,squashfs,tmpfs,devtmpfs,udev,devfs,procfs,fdescfs}"
+alias fs="df -hT | grep -Ev 'nullfs|squashfs|tmpfs|devtmpfs|udev|devfs|procfs|fdescfs'"
 alias htop="htop -d 5"
 alias pylab="ipython3 --pylab"
 alias vnclaunch="vncserver :$(expr $(id -u) % 1024) -geometry 1920x1080 -localhost no"
@@ -112,11 +112,11 @@ alias vnckill="vncserver -kill :$(expr $(id -u) % 1024)"
 
 export PATH=$HOME/.local/bin:$PATH
 
-export DISTRO=$(lsb_release -sc)
-if [ $DISTRO = "focal" ]; then
+[ -f "$(which lsb_release)" ] && export DISTRO=$(lsb_release -sc) || export DISTRO="unknown"
+if [[ $DISTRO = "focal" ]]; then
   [ -f "/opt/ros/noetic/setup.zsh" ] && source /opt/ros/noetic/setup.zsh
   export PYTHONPATH=$HOME/.local/lib/python3.8/site-packages:$PYTHONPATH
-elif [ $DISTRO = "bionic" ]; then
+elif [[ $DISTRO = "bionic" ]]; then
   [ -f "/opt/ros/melodic/setup.zsh" ] && source /opt/ros/melodic/setup.zsh
   export PYTHONPATH=$HOME/.local/lib/python3.6/site-packages:$PYTHONPATH
 fi
