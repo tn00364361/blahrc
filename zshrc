@@ -113,7 +113,7 @@ alias vnckill="vncserver -kill :$(expr $(id -u) % 1024)"
 export PATH=/opt/TurboVNC/bin:/opt/VirtualGL/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
-[ -f "$(which lsb_release)" ] && export DISTRO=$(lsb_release -sc) || export DISTRO="unknown"
+[ -x "$(command -v lsb_release)" ] && export DISTRO=$(lsb_release -sc) || export DISTRO=""
 if [[ $DISTRO = "focal" ]]; then
   [ -f "/opt/ros/noetic/setup.zsh" ] && source /opt/ros/noetic/setup.zsh
   export PYTHONPATH=$HOME/.local/lib/python3.8/site-packages:$PYTHONPATH
