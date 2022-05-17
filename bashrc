@@ -107,8 +107,6 @@ alias ct="watch -n 0.5 'sensors | grep -iv core'"
 alias fs="df -hT | grep -Ev 'nullfs|squashfs|tmpfs|devtmpfs|udev|devfs|procfs|fdescfs'"
 alias htop="htop -d 5"
 alias pylab="ipython3 --pylab"
-alias vnclaunch="vncserver :$(expr $(id -u) % 1024) -geometry 1920x1080 -localhost no"
-alias vnckill="vncserver -kill :$(expr $(id -u) % 1024)"
 
 export PATH=$HOME/.local/bin:$PATH
 
@@ -120,6 +118,3 @@ elif [[ $DISTRO = "bionic" ]]; then
   [ -f "/opt/ros/melodic/setup.zsh" ] && source /opt/ros/melodic/setup.zsh
   export PYTHONPATH=$HOME/.local/lib/python3.6/site-packages:$PYTHONPATH
 fi
-
-# Tilix
-[ $TILIX_ID ] || [ $VTE_VERSION ] && source /etc/profile.d/vte-2.91.sh
