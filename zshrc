@@ -116,13 +116,15 @@ alias pylab="ipython3 --pylab"
 
 export PATH=$HOME/.local/bin:$PATH
 
+PYTHONVERSION=$(python3 --version | awk -F '[ .]' '{print $2"."$3}')
+export PYTHONPATH=$HOME/.local/lib/python$PYTHONVERSION/site-packages:$PYTHONPATH
+
+# ROS 1
 [ -x "$(command -v lsb_release)" ] && export DISTRO=$(lsb_release -sc) || export DISTRO=""
 if [[ $DISTRO = "focal" ]]; then
-  [ -f "/opt/ros/noetic/setup.zsh" ] && source /opt/ros/noetic/setup.zsh
-  export PYTHONPATH=$HOME/.local/lib/python3.8/site-packages:$PYTHONPATH
+  [ -f "/opt/ros/noetic/setup.zsh" ] && source /opt/ros/noetic/setup.zsh > /dev/null 2>&1
 elif [[ $DISTRO = "bionic" ]]; then
-  [ -f "/opt/ros/melodic/setup.zsh" ] && source /opt/ros/melodic/setup.zsh
-  export PYTHONPATH=$HOME/.local/lib/python3.6/site-packages:$PYTHONPATH
+  [ -f "/opt/ros/melodic/setup.zsh" ] && source /opt/ros/melodic/setup.zsh > /dev/null 2>&1
 fi
 
 autoload -U compinit && compinit
