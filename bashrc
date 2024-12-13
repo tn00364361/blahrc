@@ -113,10 +113,10 @@ export PATH=$HOME/.local/bin:$PATH
 PYTHONVERSION=$(python3 --version | awk -F '[ .]' '{print $2"."$3}')
 export PYTHONPATH=$HOME/.local/lib/python$PYTHONVERSION/site-packages:$PYTHONPATH
 
-# ROS 1
+# ROS 2
 [ -x "$(command -v lsb_release)" ] && export DISTRO=$(lsb_release -sc) || export DISTRO=""
-if [[ $DISTRO = "focal" ]]; then
-  [ -f "/opt/ros/noetic/setup.zsh" ] && source /opt/ros/noetic/setup.zsh > /dev/null 2>&1
-elif [[ $DISTRO = "bionic" ]]; then
-  [ -f "/opt/ros/melodic/setup.zsh" ] && source /opt/ros/melodic/setup.zsh > /dev/null 2>&1
+if [[ $DISTRO = "jammy" ]]; then
+  [ -f "/opt/ros/humble/setup.zsh" ] && source /opt/ros/humble/setup.zsh > /dev/null 2>&1
+elif [[ $DISTRO = "noble" ]]; then
+  [ -f "/opt/ros/jazzy/setup.zsh" ] && source /opt/ros/jazzy/setup.zsh > /dev/null 2>&1
 fi
