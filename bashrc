@@ -116,7 +116,7 @@ export PYTHONPATH=$HOME/.local/lib/python$PYTHONVERSION/site-packages:$PYTHONPAT
 # ROS 2
 [ -x "$(command -v lsb_release)" ] && export DISTRO=$(lsb_release -sc) || export DISTRO=""
 if [[ $DISTRO = "jammy" ]]; then
-  [ -f "/opt/ros/humble/setup.zsh" ] && source /opt/ros/humble/setup.zsh > /dev/null 2>&1
+  [ -f "/opt/ros/humble/setup.bash" ] && source /opt/ros/humble/setup.bash > /dev/null 2>&1
 elif [[ $DISTRO = "noble" ]]; then
-  [ -f "/opt/ros/jazzy/setup.zsh" ] && source /opt/ros/jazzy/setup.zsh > /dev/null 2>&1
+  [ -f "/opt/ros/jazzy/setup.bash" ] && source /opt/ros/jazzy/setup.bash > /dev/null 2>&1
 fi
